@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Company</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/Brown and Pink Minimal Icons Icon Set.png" alt="Real Estate Logo" height="40"> RealEstateCo
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#properties">Properties</a></li>
+          <li class="nav-item dropdown position-static">
+            <a onclick="toggleDropdown(event)" class="nav-link dropdown-toggle" href="#" id="residentialDropdown" role="button">
+              Residential
+            </a>
+            
+            <ul class="dropdown-menu shadow" id="residentialMenu">
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event)">Ongoing</a>
+                <ul class="dropdown-menu" style="margin-left: 156px;">
+                  <li><a class="dropdown-item" href="#">Project A</a></li>
+                  <li><a class="dropdown-item" href="#">Project B</a></li>
+                </ul>
+              </li>
+              
+              <li class="dropdown-submenu" id="residentialMenu">
+                <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event)">Completed</a>
+                <ul class="dropdown-menu" style="margin-left: 156px;">
+                  <li><a class="dropdown-item" href="#">Project C</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu" id="residentialMenu">
+                <a class="dropdown-item dropdown-toggle" href="#"  onclick="toggleSubmenu(event)">Upcoming</a>
+                <ul class="dropdown-menu" style="margin-left: 156px;">
+                  <li><a class="dropdown-item" href="#">Artek Apartments</a></li>
+                  <li><a class="dropdown-item" href="#">Mooncraft</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          
+          
+
+          
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        
+      </head>
+      <body>
+        
+      
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- Navbar content -->
+          
+        
+          
+      
+         <!-- Toggle button -->
+   <div>       
+    <title>Side Menu</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+      }
+  
+      .menu-toggle {
+        font-size: 30px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 999;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+  
+      .side-menu {
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        background-color: #15110c;
+        color: white;
+        overflow-x: hidden;
+        transition: 0.4s ease;
+        padding: 40px 20px;
+        z-index: 1000;
+      }
+  
+      .side-menu.open {
+        right: 0;
+      }
+  
+      .side-menu .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 28px;
+        cursor: pointer;
+      }
+  
+      .side-menu h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #f7931e;
+      }
+  
+      .side-menu ul {
+        list-style: none;
+        padding: 0;
+      }
+  
+      .side-menu ul li {
+        margin: 15px 0;
+      }
+  
+      .side-menu ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+  
+      .side-menu ul li a:hover {
+        color: #f7931e;
+      }
+  
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        font-size: 20px;
+      }
+  
+      .social-icons a {
+        color: white;
+        text-decoration: none;
+      }
+  
+      .whatsapp {
+        position: absolute;
+        bottom: 60px;
+        right: 20px;
+      }
+  
+      .whatsapp img {
+        width: 40px;
+      }
+  
+      .logo {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+  
+      .logo img {
+        width: 120px;
+      }
+  
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 900;
+        display: none;
+      }
+  
+      body.menu-open::before {
+        display: block;
+      }
+    </style>
+  </head>
+  <body style="background-color: #111; color: white;">
+  
+  <!-- Toggle Button -->
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  
+  <!-- Side Menu -->
+  <div class="side-menu" id="sideMenu">
+    <div class="close-btn" id="closeBtn">&times;</div>
+    <div class="logo">
+      RealEstateCo
+    </a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#properties">Residential</a></li>
+      <li><a href="#">Commercial</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <h2>Follow Us On</h2>
+    <div class="whatsapp">
+      <a href="https://wa.me/919999999999" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      </a>
+    </div>
+    
+  </div>
+  
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeBtn = document.getElementById('closeBtn');
+  
+    menuToggle.addEventListener('click', () => {
+      sideMenu.classList.add('open');
+      document.body.classList.add('menu-open');
+    });
+  
+    closeBtn.addEventListener('click', () => {
+      sideMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+  
+    document.body.addEventListener('click', (e) => {
+      if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        sideMenu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+      }
+    });
+
+    function toggleDropdown(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById("residentialMenu");
+    dropdown.classList.toggle("show");
+  }
+
+  function toggleSubmenu(event) {
+    event.preventDefault();
+    const submenu = event.target.nextElementSibling;
+    submenu.classList.toggle("show");
+  }
+
+  // Optional: Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    const dropdown = document.getElementById("residentialMenu");
+    if (!dropdown.contains(e.target) && e.target.id !== "residentialDropdown") {
+      dropdown.classList.remove("show");
+    }
+  });
+  </script>
+  
+</div>
+
+  
+  
+
+  <!-- Offcanvas Sidebar -->
+  
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<div class="whatsapp">
+  <a href="https://wa.me/919999999999" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+</div>
+
+      </div>
+    </div>
+  </nav>
+ 
+
+  <!-- Hero Section -->
+   <div>
+    <img src="img/pexels-davidmcbee-1546166.jpg" class="card-img-top" alt="Property 1">
+   </div>   
+   <div><!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Text Content -->
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="display-5 fw-bold text-uppercase" style="letter-spacing: 2px;">A Brief About Us</h2>
+            <p class="mt-4">
+              <strong>The Wadhwa Group</strong>The Wadhwa Group carries a rich legacy of 5+ Decades built on the trust and belief of our customers and stakeholders. The group is one of Mumbai’s leading real estate companies with 250+ Landmarks and is currently developing residential, commercial and township projects spread across approximately 4.1 Million Sq.M.
+
+              Timely completion of projects coupled with strong planning and design innovation gives the group an edge over its competitors. As an organization, the group is also known for its employee-friendly and professional working environment. Today, the group’s clientele comprises of over 35,000+ satisfied customers and over 150 + MNCs.
+            </p>
+            <p>
+              Timely completion of projects coupled with strong planning and design innovation gives the group an edge over its competitors.
+              As an organization, the group is also known for its employee-friendly and professional work environment.
+            </p>
+          </div>
+    
+          <!-- Image Content -->
+          <div class="col-lg-6 position-relative">
+            <div class="position-relative" style="z-index: 1;">
+              <img src="img/pexels-falling4utah-1080696.jpg" alt="Office Interior" class="img-fluid rounded shadow" style="width: 100%;">
+            </div>
+            <img src="img/pexels-pixabay-531880.jpg" alt="Building" class="position-absolute rounded shadow"
+                 style="width: 60%; bottom: -30px; right: 0; z-index: 2; border: 5px solid white;">
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>  
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold">Find Your Dream Home</h1>
+      <p class="lead">Luxury apartments, family homes, and investment properties</p>
+      <a href="#properties" class="btn btn-primary btn-lg mt-3">Browse Listings</a>
+    </div>
+  </header>
+
+  <!-- Featured Properties Section -->
+  <section id="properties" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Featured Properties</h2>
+        <p class="text-muted">Explore the best listings in your area</p>
+      </div>
+      <div class="row g-4">
+        <!-- Property Card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow">
+            <img src="img/pexels-falling4utah-1080696.jpg" class="card-img-top" alt="Property 1">
+            <div class="card-body">
+              <h5 class="card-title">Luxury Apartment in Mumbai</h5>
+              <p class="card-text">3 BHK with sea view and modern amenities</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Property Card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow">
+            <img src="img/pexels-falling4utah-1080696.jpg" class="card-img-top" alt="Property 2">
+            <div class="card-body">
+              <h5 class="card-title">Modern Villa in Pune</h5>
+              <p class="card-text">4 BHK with garden and private pool</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Property Card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow">
+            <img src="img/pexels-falling4utah-1080696.jpg" class="card-img-top" alt="Property 3">
+            <div class="card-body">
+              <h5 class="card-title">Commercial Office Space</h5>
+              <p class="card-text">Spacious and well-connected office space</p>
+              <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 RealEstateCo. All rights reserved.</p>
+      <small>Designed by Divyanshi Sharma</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
